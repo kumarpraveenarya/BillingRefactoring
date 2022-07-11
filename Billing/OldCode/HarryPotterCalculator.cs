@@ -4,18 +4,19 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Billing
 {
     public class HarryPotterCalculator
     {
+        public static Stack<int> s = new Stack<int>();
+
         public void CalculateCost(int book1, int book2, int book3, int book4, int book5, string path, string name, string address)
         {
-            CalculateHarryPotter(book1, book2, book3, book4, path, book5, name, address);
+            CalculateHarryPotter(book1, book2, book3, book4, book5, path, name, address);
         }
         
-        private void CalculateHarryPotter(int book1, int book2, int book3, int book4, string path, int book5, string name, string address)
+        private void CalculateHarryPotter(int book1, int book2, int book3, int book4, int book5, string path, string name, string address)
         {
             HashSet<int[]> costs = new HashSet<int[]>(new EqualityComparer());
             for (int N = 1; CanBuyHarryPotter(book1, book2, book3, book4, book5, N); ++N)
@@ -109,26 +110,7 @@ namespace Billing
             fs.Write(Encoding.ASCII.GetBytes(s2), 0, Encoding.ASCII.GetBytes(s2).Length);
 
             fs.Close();
-        }
-
-        static Stack<int> s = new Stack<int>();
-
-        class EqualityComparer : IEqualityComparer<int[]>
-        {
-            public bool Equals(int[] x, int[] y)
-            {
-                for (int i = 1; i <= 5; ++i)
-                {
-                    if (x[i] != y[i]) return false;
-                }
-                return true;
-            }
-
-            public int GetHashCode(int[] obj)
-            {
-                return obj.Sum(x => x.GetHashCode());
-            }
-        }
+        }            
 
         private static HashSet<int[]> CalculateBuyHarryPotter(int book1, int book2, int book3, int book4, int book5, int n, decimal f)
         {

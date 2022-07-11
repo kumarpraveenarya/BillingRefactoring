@@ -50,12 +50,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BasketTests.cs" />
+    <Compile Include="BooksSaleTests.cs" />
     <Compile Include="HarryPotterCalculatorUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Billing\Billing.csproj">
-      <Project>{66401677-25E7-4E58-85D3-98AE0B989D11}</Project>
+      <Project>{66401677-25e7-4e58-85d3-98ae0b989d11}</Project>
       <Name>Billing</Name>
     </ProjectReference>
   </ItemGroup>

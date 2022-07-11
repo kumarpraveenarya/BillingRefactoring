@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -40,7 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HarryPotterCalculator.cs" />
+    <Compile Include="core\IBookStock.cs" />
+    <Compile Include="core\IDealsinSale.cs" />
+    <Compile Include="core\ISale.cs" />
+    <Compile Include="Merchant.cs" />
+    <Compile Include="persistence\Basket.cs" />
+    <Compile Include="persistence\Book.cs" />
+    <Compile Include="core\IBook.cs" />
+    <Compile Include="core\IDeal.cs" />
+    <Compile Include="persistence\BookStock.cs" />
+    <Compile Include="persistence\Deal.cs" />
+    <Compile Include="OldCode\EqualityComparer.cs" />
+    <Compile Include="OldCode\HarryPotterCalculator.cs" />
+    <Compile Include="core\IBasket.cs" />
+    <Compile Include="persistence\DealsinSale.cs" />
+    <Compile Include="persistence\Sale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
